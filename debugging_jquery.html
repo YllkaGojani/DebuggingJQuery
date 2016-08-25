@@ -4,11 +4,10 @@
 	<link rel="stylesheet" type="text/css" href="debugging_jquery.css">
 	<script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
 	<script type="text/javascript">
-	
-			$('p, h3, li').hoverfunction(){
+		$(document).ready(function(){
+			console.log('working');
+			$('#left_content p, h3, li').hover(function(){
 				$(this).css('color', 'white');
-			}, function(){
-				$(this).css('color', 'black');
 			});
 
 			$('a').click(function(){
@@ -17,17 +16,17 @@
 
 			$('img').click(function(){
 				$(this).slideUp();
-			);
+			});
 
 			$('h5').click(function(){
-				$('img').slide Down();
+				$('img').slideDown();
 			});
 
 			$('button').click(function(){
-				var result = $('input:checked').value()  
+				var result = $('input:checked').val() ; 
 				alert("Thank you for your input, we like " + result + " too!");
-			});	
-
+			});		
+		});
 	</script>
 </head>
 <body>
@@ -43,6 +42,7 @@
 			<input type='radio' name='topping' value='pineapple'>Pineapple
 			<button>Tell us!</button>
 		</div>
+
 		<div id='left_content'>
 			<div class='box'>
 				<h3>About us!</h3>
@@ -72,9 +72,9 @@
 					<li>Toppings: $2.00 per small, $2.50 per medium, $2.75 per large, $3.00 per Dojo</li>
 				</ul>
 				<a href="#">Click here to order!</a>
-			</div>
-			
+			</div>			
 		</div>  <!--end of left content -->
+
 		<div id='right_content'>
 			<img src="pizza.jpg">
 			<h5>Our pizza runs on all browsers!</h5>
